@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: aidens-halloween-tracker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: TRACKER_SECRET
+        generateValue: true
